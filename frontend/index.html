@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Seguro de Automovel</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Simulador de Cotação de Seguro</h1>
+        <form id="cotacaoForm">
+            <div class="form-group">
+                <label for="nomeCliente">Nome do Cliente:</label>
+                <input type="text" id="nomeCliente" required>
+            </div>
+
+            <div class="form-group">
+                <label for="idadeCondutor">Idade do Condutor:</label>
+                <input type="number" id="idadeCondutor" min="18" max="120" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tipoVeiculo">Tipo do Veículo:</label>
+                <select id="tipoVeiculo" required>
+                    <option value="">Selecione...</option>
+                    <option value="carro popular">Carro Popular</option>
+                    <option value="suv">SUV</option>
+                    <option value="caminhonete">Caminhonete</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="anoVeiculo">Ano do Veículo:</label>
+                <input type="number" id="anoVeiculo" min="1900" max="2025" required>
+            </div>
+
+            <div class="form-group">
+                <label for="valorVeiculo">Valor Aproximado do Veículo (R$):</label>
+                <input type="number" id="valorVeiculo" step="0.01" min="0" required>
+            </div>
+
+            <button type="submit">Calcular Cotação</button>
+        </form>
+
+        <div id="resultadoCotacao" class="resultado-cotacao" style="display: none;">
+            <h2>Resultado da Cotação</h2>
+            <p><strong>Nome:</strong> <span id="resultadoNome"></span></p>
+            <p><strong>Valor do Seguro:</strong> <span id="resultadoValor"></span></p>
+            <p><strong>Resumo:</strong> <span id="resultadoResumo"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
